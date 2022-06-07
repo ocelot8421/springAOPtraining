@@ -1,4 +1,4 @@
-package vid067_Step_01_Setting_up_AOP_Example_Part_1.aspect.archive;
+package stringAopExample.aspect.archive;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;
@@ -14,8 +14,8 @@ public class UserAccessAspect {
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
-//    @Before("execution(* vid067_Step_01_Setting_up_AOP_Example_Part_1.service.*.*(..))")
-    @Before("execution(* vid067_Step_01_Setting_up_AOP_Example_Part_1..*.*(..))")
+//    @Before("execution(* stringAopExample.service.*.*(..))")
+    @Before("execution(* stringAopExample..*.*(..))")
     public void before(JoinPoint joinPoint){
         logger.info(" Check for user access ");
         logger.info(" Allow execution for - {}", joinPoint);
