@@ -1,5 +1,6 @@
-package vid067_Step_01_Setting_up_AOP_Example_Part_1.aspect;
+package vid067_Step_01_Setting_up_AOP_Example_Part_1.aspect.archive;
 
+import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.slf4j.Logger;
@@ -12,8 +13,8 @@ public class BeforeAspect {
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    @Before("execution(* vid067_Step_01_Setting_up_AOP_Example_Part_1.repository.*.*(..))")
-    public void before(){
-        logger.info(" Intercepted Method Calls {}");
+    @Before("execution(* vid067_Step_01_Setting_up_AOP_Example_Part_1.service.*.*(..))")
+    public void before(JoinPoint joinPoint){
+        logger.info(" Intercepted Method Call {} - ", joinPoint);
     }
 }
